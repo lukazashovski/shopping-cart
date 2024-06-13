@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <nav>
         <Link to="/" className="nav-logo">
-          <span>sknmart</span>
+          <span>'mart</span>
         </Link>
         <div className="nav-items">
           <Link to="/shop">
@@ -14,6 +14,9 @@ function Navbar() {
           </Link>
           <Link to="/about-us">
             <span>about us</span>
+          </Link>
+          <Link to="/cart">
+            <span>cart</span>
           </Link>
         </div>
       </nav>

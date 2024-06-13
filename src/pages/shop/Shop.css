@@ -1,0 +1,7 @@
+.shop-items {
+  padding: 2rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2rem 1rem;
+}

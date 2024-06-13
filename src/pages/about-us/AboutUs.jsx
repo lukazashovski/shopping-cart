@@ -5,7 +5,7 @@ function AboutUs() {
   return (
     <>
       <Navbar></Navbar>
-      <p>about us</p>
+      <p>sigma nation rise</p>
     </>
   );
 }

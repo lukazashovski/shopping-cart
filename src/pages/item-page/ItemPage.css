@@ -1,0 +1,31 @@
+.item-page {
+  display: flex;
+  gap: 1rem;
+}
+
+.item-page img {
+  max-width: 15rem;
+}
+
+.item-info {
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quantity-selector a,
+.info-bottom a {
+  cursor: pointer;
+}

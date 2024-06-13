@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -7,12 +8,12 @@ function App() {
       <Navbar></Navbar>
       <div className="hero">
         <div className="hero-info">
-          <h1>we sell skins</h1>
-          <p>cs2's #1 skin marketplace</p>
+          <h1>we sell stuff</h1>
+          <p>the #1 marketplace</p>
         </div>
-        <a href="/shop" className="hero-btn">
+        <Link to="/shop" className="hero-btn">
           check it out
-        </a>
+        </Link>
       </div>
     </>
   );
