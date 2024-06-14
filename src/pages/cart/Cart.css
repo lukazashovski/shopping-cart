@@ -68,3 +68,7 @@ justify .cart-item .item-info {
 
   border-radius: 1rem;
 }
+
+.quantity-btn {
+  cursor: pointer;
+}

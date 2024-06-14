@@ -1,11 +1,10 @@
-// src/pages/Cart/Cart.js
 import "./Cart.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { CartContext } from "../../components/CartContext";
 
 function Cart() {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   // Initialize and calculate total price
   const totalPrice = cart.reduce(
@@ -16,6 +15,22 @@ function Cart() {
   function PayUp() {
     alert("oopsie doopsie!!! err message: ur too poor");
   }
+
+  const increaseQuantity = (id) => {
+    const updatedCart = cart.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCart(updatedCart);
+  };
+
+  const decreaseQuantity = (id) => {
+    const updatedCart = cart
+      .map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+      )
+      .filter((item) => item.quantity > 0);
+    setCart(updatedCart);
+  };
 
   return (
     <>
@@ -32,7 +47,22 @@ function Cart() {
                   <img src={item.image} alt={item.title} />
                   <div className="item-info">
                     <p>{item.title}</p>
-                    <p>Quantity: {item.quantity}</p>
+                    <p>
+                      Quantity:{" "}
+                      <a
+                        className="quantity-btn"
+                        onClick={() => decreaseQuantity(item.id)}
+                      >
+                        -
+                      </a>{" "}
+                      {item.quantity}{" "}
+                      <a
+                        className="quantity-btn"
+                        onClick={() => increaseQuantity(item.id)}
+                      >
+                        +
+                      </a>
+                    </p>
                     <p>Price: ${item.price}</p>
                   </div>
                   <p>Total: ${item.quantity * item.price}</p>
